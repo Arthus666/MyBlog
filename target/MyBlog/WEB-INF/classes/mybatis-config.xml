@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties>
+        <property name="username" value="root"/>
+        <property name="password" value="196743"/>
+        <property name="url" value="jdbc:mysql://121.43.41.221:3306/blog?serverTimezone=UTC"/>
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+    </properties>
+
+<!--    <properties>-->
+<!--        <property name="username" value="root"/>-->
+<!--        <property name="password" value="123456"/>-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/blog?serverTimezone=UTC"/>-->
+<!--        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--    </properties>-->
+
+    <environments default="test">	<!-- 默认使用哪个环境 -->
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+                <property name="url" value="${url}"/>
+                <property name="driver" value="${driver}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="SelectInfo.xml"/>
+        <mapper resource="OperateInfo.xml"/>
+    </mappers>
+
+</configuration>

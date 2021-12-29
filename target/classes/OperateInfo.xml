@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dream.dao.OperateDataDao">
+
+    <insert id="insertUserPojo" useGeneratedKeys="true" keyColumn="id" parameterType="dream.pojo.UserPojo">
+        insert into
+            user(username,password,email,is_admin)
+            values(#{username},#{password},#{email},#{is_admin})
+    </insert>
+
+    <insert id="insertBlogPojo" useGeneratedKeys="true" keyColumn="article_id" parameterType="dream.pojo.BlogPojo">
+        insert into
+             article(id,first_title,second_title,tag,time,content)
+             values(#{id},#{first_title},#{second_title},#{tag},#{time},#{content})
+    </insert>
+
+    <insert id="insertCommentPojo" parameterType="dream.pojo.CommentPojo">
+        insert into
+             comment(article_id,user_id,comment_time,user_comment)
+             values(#{article_id},#{user_id},#{comment_time},#{user_comment})
+    </insert>
+
+</mapper>
