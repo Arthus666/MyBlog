@@ -1,1 +1,1 @@
-技术栈：Jsp+Servlet+Mybatis
+Technology Stack:Jsp+Servlet+Mybatis
